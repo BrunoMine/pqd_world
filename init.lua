@@ -26,7 +26,7 @@ pqd_world.var = {}
 pqd_world.var.PQD_WORLD_TP_MIN_RADIUS = tonumber(minetest.setting_get("pqd_world_tp_min_radius") or 1000)
 
 -- Raio máximo de distancia do alvo para teleportar
-pqd_world.var.PQD_WORLD_TP_MAX_RADIUS = tonumber(minetest.setting_get("pqd_world_tp_max_radius") or 2000)
+pqd_world.var.PQD_WORLD_TP_MAX_RADIUS = pqd_world.var.PQD_WORLD_TP_MIN_RADIUS + 300
 
 -- Tempo (em segundos) para verificar waypoints do servidor (padrão é 60)
 pqd_world.var.WP_CHECK_TIMER = 60

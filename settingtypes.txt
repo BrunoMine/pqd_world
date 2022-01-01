@@ -1,0 +1,2 @@
+# O jogador será teleportado para uma distancia entre esse valor e 300 blocos mais longe.
+pqd_world_tp_min_radius (Distancia minima do alvo) int 1000 300

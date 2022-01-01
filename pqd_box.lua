@@ -21,6 +21,7 @@ local access_box = function(player)
 	-- Cria formspec
 	local formspec = "size[8,4]"
 		.."label[0,0;Escolha o tipo de destino]"
+		.."image[6.5,0;1.5,1.5;pqd_world_pqd.png]"
 		
 		-- Ir para coordenada
 		.."field[0.485,1.795;2,1;coord_x;Coord. X;]"
@@ -70,13 +71,13 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 			-- Verificar se é si mesmo
 			if fields.player_target == player_name then
 				
-				minetest.chat_send_player(player_name, "Não pode se teleportar para si mesmo.")
+				minetest.chat_send_player(player_name, "Não pode se teleportar para si mesmo")
 				return
 			
 			-- Verificar se jogador alvo está ativo	
 			elseif fields.player_target == "" or not minetest.get_player_by_name(fields.player_target) then
 				
-				minetest.chat_send_player(player_name, "Jogador invalido.")
+				minetest.chat_send_player(player_name, "Jogador invalido")
 				return
 				
 			else
@@ -98,12 +99,12 @@ end)
 minetest.register_node("pqd_world:pqd_box", {
 	description = "Caixa de PQD",
 	tiles = {
-		"default_chest_top.png^pqd_world_pqd_box.png", -- Cima
-		"default_chest_top.png", -- Baixo
-		"default_chest_side.png", -- Direita
-		"default_chest_side.png", -- Esquerda
-		"default_chest_side.png", -- Fundo
-		"default_chest_front.png" -- Frente
+		"default_wood.png^pqd_world_pqd_box_top.png", -- Cima
+		"default_wood.png^pqd_world_pqd_box_bottom.png", -- Baixo
+		"default_wood.png^pqd_world_pqd_box_side.png", -- Direita
+		"default_wood.png^pqd_world_pqd_box_side.png", -- Esquerda
+		"default_wood.png^pqd_world_pqd_box_side.png", -- Fundo
+		"default_wood.png^pqd_world_pqd_box_side.png" -- Frente
 	},
 	paramtype2 = "facedir",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
